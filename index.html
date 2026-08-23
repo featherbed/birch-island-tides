@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#12242a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Birch Tides">
+  <title>Birch Island Tides</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div>
+        <div class="brand">Birch Island</div>
+        <h1>Tides</h1>
+        <div class="date" id="todayLabel">Harpswell · Casco Bay</div>
+      </div>
+    </header>
+    <section class="status">
+      <div class="status-kicker">Now</div>
+      <div class="status-row">
+        <div class="status-word" id="state">—</div>
+        <div class="now-ht" id="nowHt"></div>
+      </div>
+      <div class="next-grid">
+        <div class="tile high">
+          <div class="lab">Next high</div>
+          <div class="t" id="nextHigh">—</div>
+          <div class="h" id="nextHighH"></div>
+        </div>
+        <div class="tile low">
+          <div class="lab">Next low</div>
+          <div class="t" id="nextLow">—</div>
+          <div class="h" id="nextLowH"></div>
+        </div>
+      </div>
+    </section>
+    <section class="card">
+      <h2>24-hour curve</h2>
+      <div class="chart-wrap">
+        <svg class="chart" id="chart" viewBox="0 0 360 168" preserveAspectRatio="none" role="img" aria-label="Tide curve"></svg>
+      </div>
+    </section>
+    <section class="card">
+      <h2>Today</h2>
+      <div class="today-list" id="todayList"></div>
+    </section>
+    <section class="card">
+      <h2>Next 7 days</h2>
+      <div class="week-list" id="weekList"></div>
+    </section>
+    <section class="card month-card">
+      <div class="month-head">
+        <h2 id="monthTitle">Month</h2>
+        <div class="month-nav">
+          <button type="button" id="prevMonth" aria-label="Previous month">‹</button>
+          <button type="button" id="nextMonth" aria-label="Next month">›</button>
+        </div>
+      </div>
+      <p class="month-hint">Each bar is that day’s lowest low to highest high (same scale). Moon on the left; new and full mark spring tides.</p>
+      <div class="month-scale" id="monthScale"></div>
+      <div class="month-list" id="monthList"></div>
+    </section>
+    <p class="offline" id="offline">Showing last saved NOAA fetch (offline).</p>
+    <p class="attr">
+      Predictions: NOAA / NOS / CO-OPS<br>
+      Station <strong>8417553</strong> — Wilson Cove, Middle Bay, ME<br>
+      43.8250°N, 69.9767°W · subordinate of Portland 8418150<br>
+      Used for Birch Island, Harpswell / Casco Bay (no on-island NOAA station).<br>
+      Observed water level (optional): Portland 8418150.<br>
+      Times in America/New_York. Heights MLLW, feet.<br>
+      Day lists include every high/low on that local calendar day.
+      <a href="https://tidesandcurrents.noaa.gov/noaatidepredictions.html?id=8417553">Official NOAA page</a>
+    </p>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
